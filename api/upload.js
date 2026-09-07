@@ -36,6 +36,10 @@ async function handler(req, res) {
 
   try {
     const { buffer, filename, mimeType } = await parseForm(req);
+    if (!buffer || !buffer.length) {
+      res.status(400).json({ error: 'No file data received by the server.' });
+      return;
+    }
     const blob = await put(`uploads/${Date.now()}-${filename}`, buffer, {
       access: 'public',
       contentType: mimeType,
@@ -43,7 +47,7 @@ async function handler(req, res) {
     });
     res.status(200).json({ url: blob.url });
   } catch (err) {
-    res.status(500).json({ error: 'Upload failed' });
+    res.status(500).json({ error: String((err && err.message) || err) });
   }
 }
 
