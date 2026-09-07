@@ -1296,7 +1296,11 @@
         headers: adminToken ? { 'x-admin-password': adminToken } : {},
         body: form
       });
-      if(!res.ok) throw new Error('Upload failed');
+      if(!res.ok){
+        let detail = `HTTP ${res.status}`;
+        try{ const errBody = await res.json(); if (errBody && errBody.error) detail = errBody.error; }catch(e){}
+        throw new Error(detail);
+      }
       const data = await res.json();
       urls.push(data.url);
     }
@@ -1321,7 +1325,7 @@
       const urls = await uploadFiles(files);
       if (pendingImageCallback) pendingImageCallback(urls);
     }catch(err){
-      alert('Upload failed. Please try again.');
+      alert('Upload failed: ' + (err && err.message ? err.message : 'please try again.'));
     }
     fileInput.value = '';
   });
