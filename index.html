@@ -924,6 +924,293 @@
     section{ padding:48px 18px; }
     .hero{ padding:44px 18px 60px; }
   }
+
+/* =========================================================
+   AFTER-REVENUE MATCHED DESIGN OVERRIDES
+   Keeps the existing storefront functionality/content while
+   matching the dark dashboard design used in the other site.
+   ========================================================= */
+:root{
+  --match-bg:#000000;
+  --match-panel:#080705;
+  --match-input:#0b0907;
+  --match-border:rgba(227,215,199,.14);
+  --match-border-strong:rgba(227,215,199,.28);
+  --match-text:#e3d7c7;
+  --match-dim:#a89a86;
+  --match-accent:#e3d7c7;
+}
+
+html,body{
+  background:
+    radial-gradient(ellipse 120% 80% at 15% 0%, rgba(250,215,146,.07), transparent 65%),
+    radial-gradient(ellipse 120% 80% at 85% 50%, rgba(250,215,146,.055), transparent 65%),
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(250,215,146,.06), transparent 65%),
+    var(--match-bg)!important;
+  background-repeat:no-repeat!important;
+  background-attachment:fixed!important;
+  color:var(--match-text)!important;
+}
+
+.site-gate{background:#030303!important;}
+.site-gate-card,
+.admin-auth-modal,
+.support-modal,
+.manage-modal,
+.product-modal,
+.review-modal{
+  background:var(--match-panel)!important;
+  border:1px solid var(--match-border-strong)!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 35px rgba(227,215,199,.05)!important;
+}
+
+.site-gate-form input,
+.admin-auth-form input,
+.manage-add input,
+.manage-add select,
+.search-box,
+.info-box,
+.manage-row,
+.manage-tab,
+.contact-opt{
+  background:var(--match-input)!important;
+}
+
+.site-gate-form input,
+.admin-auth-form input,
+.manage-add input,
+.manage-add select,
+.search-box,
+.info-box,
+.manage-row,
+.manage-tab,
+.contact-opt,
+.product-modal,
+.review-modal,
+.manage-modal{
+  border-color:var(--match-border)!important;
+}
+
+.card,
+.review-card,
+.info-card{
+  background:var(--match-panel)!important;
+  border:1px solid var(--match-border)!important;
+}
+
+.card:hover{
+  border-color:var(--match-border-strong)!important;
+  box-shadow:0 12px 36px rgba(0,0,0,.35);
+}
+
+.card-media{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(227,215,199,.08), transparent 55%),
+    #0b0907!important;
+  border-radius:22px!important;
+}
+.modal-media,
+.review-modal-media,
+.manage-thumb,
+.manage-photo-thumb,
+.thumb{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(227,215,199,.08), transparent 55%),
+    #0b0907!important;
+}
+
+.review-foot,
+.review-modal-foot{
+  background:#080705!important;
+  border-top-color:var(--match-border)!important;
+}
+
+.pill{
+  background:#0b0907!important;
+  border-color:var(--match-border)!important;
+}
+.pill.active{
+  background:var(--match-accent)!important;
+  border-color:var(--match-accent)!important;
+  color:#030303!important;
+}
+
+.badge-live{
+  background:rgba(227,215,199,.08)!important;
+  border-color:var(--match-border-strong)!important;
+}
+
+.search-box input,
+.site-gate-form input,
+.admin-auth-form input,
+.manage-add input,
+.manage-add select{
+  color:#f8ebce!important;
+}
+
+.site-gate-form input::placeholder,
+.search-box input::placeholder,
+.manage-add input::placeholder{
+  color:#726556!important;
+}
+
+button,
+.btn,
+.manage-btn,
+.footer-cta,
+.discord-btn,
+.buy-fab,
+.site-gate-form button,
+.admin-auth-form button{
+  transition:all .18s ease;
+}
+
+.site-gate-form button,
+.admin-auth-form button,
+.discord-btn,
+.footer-cta{
+  background:#e3d7c7!important;
+  color:#030303!important;
+  border-color:#e3d7c7!important;
+}
+
+.site-gate-form button:hover,
+.admin-auth-form button:hover,
+.discord-btn:hover,
+.footer-cta:hover{
+  background:#b9ad99!important;
+  border-color:#b9ad99!important;
+}
+
+.manage-btn{
+  background:#0b0907!important;
+  border-color:var(--match-border-strong)!important;
+}
+
+.modal-close,
+.review-nav-btn{
+  background:#0b0907!important;
+  border:1px solid var(--match-border-strong)!important;
+  color:#e3d7c7!important;
+  box-shadow:none!important;
+}
+.modal-close:hover,
+.review-nav-btn:hover{
+  background:#e3d7c7!important;
+  color:#030303!important;
+  border-color:#e3d7c7!important;
+}
+
+.nav-toggle{color:#e3d7c7!important;}
+header{
+  background:rgba(4,4,4,.92)!important;
+  border-bottom:1px solid var(--match-border)!important;
+}
+.topbar{background:rgba(4,4,4,.92)!important;}
+
+.manage-fab{
+  width:38px!important;
+  height:38px!important;
+  border-radius:9999px!important;
+  background:#0b0907!important;
+  border:1px solid var(--match-border)!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.35)!important;
+}
+.manage-fab:hover{
+  border-color:var(--match-border-strong)!important;
+  box-shadow:0 0 18px rgba(227,215,199,.08)!important;
+}
+
+.category-manage-btn{
+  width:16px!important;
+  height:16px!important;
+  min-width:16px!important;
+  min-height:16px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#a99d8c!important;
+}
+.category-manage-btn:hover{
+  color:#e3d7c7!important;
+  box-shadow:0 0 12px rgba(227,215,199,.16)!important;
+}
+
+input,select,textarea{
+  background:#0b0907!important;
+  color:#e3d7c7!important;
+  border-color:rgba(227,215,199,.18)!important;
+}
+select option,
+select optgroup{
+  background:#0b0907!important;
+  color:#e3d7c7!important;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none!important;
+  border-color:#e3d7c7!important;
+  box-shadow:0 0 12px rgba(227,215,199,.16)!important;
+}
+
+footer{
+  border-top-color:var(--match-border)!important;
+}
+
+@media (max-width:980px){
+  .hero{
+    padding-left:20px!important;
+    padding-right:20px!important;
+  }
+  .header-inner{
+    width:min(1280px,calc(100% - 32px))!important;
+  }
+  .grid{gap:16px!important;}
+}
+
+@media (max-width:640px){
+  .site-gate{padding:18px 14px 30px!important;}
+  .site-gate-card{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:22px!important;
+    border-radius:22px!important;
+  }
+  .site-gate-logo{width:88px!important;height:88px!important;}
+  .hero{
+    padding:38px 18px 52px!important;
+    row-gap:30px!important;
+  }
+  .hero h1{
+    font-size:clamp(54px,17vw,84px)!important;
+  }
+  section{
+    padding:48px 18px!important;
+  }
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+  .card,
+  .card-media{
+    border-radius:16px!important;
+  }
+  .section-head{
+    gap:16px!important;
+    margin-bottom:22px!important;
+  }
+  .product-modal{
+    padding:20px!important;
+    gap:20px!important;
+    border-radius:20px!important;
+  }
+  .manage-modal{
+    padding:22px!important;
+    border-radius:20px!important;
+  }
+}
+
 </style>
 </head>
 <body>
